@@ -34,7 +34,7 @@ body {
 h1 {
     border: rgb(255, 255, 255) solid 4px;
     border-radius: 5%;
-    font-size: 120px;
+    font-size: 110px;
     margin: 20px;
     padding: 10px 20px 10px 20px;
 }
@@ -60,25 +60,21 @@ img {
 }
 
 .right {
+    align-items: center;
     background-color: rgb(255, 255, 255);
     border-left: black solid 3px;
     color: black;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-evenly;
-    padding: 0 0 0 350px;
+    padding: 0 0 0 330px;
 }
 
-.computer-box {
+.computer-box, .player-box  {
     text-align: center;
 }
 
-.player-box {
-    text-align: center;
-}
-
-.player, .computer {
+.computer, .player {
     color: black;
     font-size: 70px;
 } 
@@ -90,14 +86,14 @@ img {
     color: rgb(255, 255, 255);
     height: 350px;
     float: left;
+    font-size: 55px;
     margin: 5px;
     padding: 120px 1px;
     width: 295px;
-    font-size: 50px;
 }
 
-.deck-down {
-    align-items: center;
+.computer-deck-up, .player-deck-up {
+    font-size: 75px;
 }
 
 .right-btn-box {
@@ -124,10 +120,10 @@ img {
 }
 
 .winner {
-    font-size: 50px;
     color: black;
     border: black solid 4px;
-    border-radius: 5%;
+    border-radius: 6%;
+    font-size: 50px;
     margin: 20px;
     padding: 3px 10px 3px 10px;
 }
