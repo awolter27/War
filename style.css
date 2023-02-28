@@ -119,7 +119,7 @@ img {
     display: none;
 }
 
-.winner {
+.round, .winner {
     color: black;
     border: black solid 4px;
     border-radius: 6%;

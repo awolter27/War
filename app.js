@@ -9,6 +9,7 @@ const deck = [];
 
 let computerDeckDown = document.querySelector('.computer-deck-down');
 let playerDeckDown  = document.querySelector('.player-deck-down');
+let round = document.querySelector('.round');
 let winner = document.querySelector('.winner');
 
 function deckOfCards() {
@@ -26,6 +27,7 @@ function play() {
     // after the play button is clicked, it should randomly place half the deck into each players personal decks
     computerDeckDown.innerHTML = 'Cards In Deck: 26';
     playerDeckDown.innerHTML = 'Cards In Deck: 26';
+    round.innerHTML = 'Round: 1';
     showDrawBtn();
 }
 
@@ -34,6 +36,7 @@ function restart() {
     playerDeckDown.innerHTML = 'Cards In Deck: 0';
     // reset computerDeckUp to nothing
     // reset playerDeckUp to nothing
+    round.innerHTML = 'Round: 0';
     winner.innerHTML = 'Winner:';
     hideDrawBtn();
     hideWarBtn();
@@ -41,8 +44,8 @@ function restart() {
 
 function draw() {
     // after the draw button is clicked, it should randomly choose 1 card from each deck (computer, player) to turn over in face up slot, subtract 1 to computer and player's "cards in deck: 25"
-    // if computer wins, add 2 to computer's "cards in deck: 28", allow player to hit draw again to start the next round
-    // if player wins, add 2 to player's "cards in deck:", allow player to hit draw again to start the next round
+    // if computer wins, add 2 to computer's "cards in deck: 28", update round by 1, allow player to hit draw again to start the next round
+    // if player wins, add 2 to player's "cards in deck:", update round by 1, allow player to hit draw again to start the next round
     // if there's a tie, hide the draw button, show the war button, so the player can click run the war function
 }
 
