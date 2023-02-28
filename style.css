@@ -1,10 +1,13 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    min-height: 100vh;
 }
 
 .left-main {
@@ -17,8 +20,6 @@ body {
 
 .column {
     display: flex;
-    float: left;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
   
 .left {
@@ -60,11 +61,13 @@ img {
 
 .right {
     background-color: rgb(255, 255, 255);
+    border-left: black solid 3px;
     color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: red solid 3px;
+    justify-content: space-evenly;
+    padding: 0 0 0 350px;
 }
 
 .computer-box {
@@ -112,11 +115,19 @@ img {
     text-align: center;
 }
 
+.draw {
+    display: none;
+}
+
+.go-to-war {
+    display: none;
+}
+
 .winner {
-    font-size: 70px;
+    font-size: 50px;
     color: black;
     border: black solid 4px;
     border-radius: 5%;
     margin: 20px;
-    padding: 8px 17px 8px 17px;
+    padding: 3px 10px 3px 10px;
 }
