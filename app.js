@@ -8,12 +8,12 @@ const suits = ['♣', '♦', '♥', '♠'];
 const deck = [];
 
 let computerDeckDown = document.querySelector('.computer-deck-down');
-let playerDeckDown  = document.querySelector('.player-deck-down');
+let playerDeckDown = document.querySelector('.player-deck-down');
 let round = document.querySelector('.round');
 let winner = document.querySelector('.winner');
 
 function deckOfCards() {
-    let cards = []
+    let cards = [];
     for (let i = 0; i < values.length; i++) {
         for (let j = 0; j < suits.length; j++) {
             cards = `${values[i]}${suits[j]}`
@@ -25,6 +25,7 @@ function deckOfCards() {
 
 function play() {
     // after the play button is clicked, it should randomly place half the deck into each players personal decks
+    // create a function taht randomly selects an elemet from teh array, shuffle, (Math.random * 52, splice to save the string)
     computerDeckDown.innerHTML = 'Cards In Deck: 26';
     playerDeckDown.innerHTML = 'Cards In Deck: 26';
     round.innerHTML = 'Round: 1';
@@ -47,6 +48,7 @@ function draw() {
     // if computer wins, add 2 to computer's "cards in deck: 28", update round by 1, allow player to hit draw again to start the next round
     // if player wins, add 2 to player's "cards in deck:", update round by 1, allow player to hit draw again to start the next round
     // if there's a tie, hide the draw button, show the war button, so the player can click run the war function
+    // the first player with 0 in their deck loses, the other player wins, log winner at the bottom, hide the draw and war buttons 
 }
 
 function war() {

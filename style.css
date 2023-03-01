@@ -10,18 +10,10 @@ body {
     min-height: 100vh;
 }
 
-.left-main {
-    display: flex;
-}
-
-.right-main {
-    display: flex;
-}
-
 .column {
     display: flex;
 }
-  
+
 .left {
     align-items: center;
     background-color: rgb(158, 174, 180);
@@ -46,7 +38,7 @@ h1 {
 
 .left-btn {
     background-color: rgb(255, 255, 255);
-    border: black solid;
+    border: black solid 3px;
     color: black;
     font-size: 30px;
     margin: 20px;
@@ -70,40 +62,43 @@ img {
     padding: 0 0 0 330px;
 }
 
-.computer-box, .player-box  {
+.computer-box,
+.player-box {
     text-align: center;
 }
 
-.computer, .player {
+.computer,
+.player {
     color: black;
     font-size: 70px;
-} 
+}
 
 .deck {
     background-color: rgb(158, 174, 180);
     border: black solid 3px;
     border-radius: 9px;
     color: rgb(255, 255, 255);
-    height: 350px;
     float: left;
     font-size: 55px;
+    height: 350px;
     margin: 5px;
     padding: 120px 1px;
     width: 295px;
 }
 
-.computer-deck-up, .player-deck-up {
+.computer-deck-up,
+.player-deck-up {
     font-size: 75px;
 }
 
-.right-btn-box {
+#right-btn-box {
     display: flex;
     flex-direction: row;
 }
 
 .right-btn {
     background-color: rgb(158, 174, 180);
-    border: black solid;
+    border: black solid 3px;
     color: rgb(255, 255, 255);
     font-size: 30px;
     margin: 20px;
@@ -119,7 +114,8 @@ img {
     display: none;
 }
 
-.round, .winner {
+.round,
+.winner {
     color: black;
     border: black solid 4px;
     border-radius: 6%;

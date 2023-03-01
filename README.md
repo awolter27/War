@@ -2,9 +2,13 @@
 
 Project 1
 
+## Website
+
+- URL to come. 
+
 ## User Story
 
-- As a user, I will be able to play the card game War against a computer.
+- As a user, I will be able to play an interactive card game, called War, against a computer.
 
 ## Rules
 
