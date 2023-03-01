@@ -43,11 +43,14 @@ function shuffle() {
 
 function deal() {
     shuffle();
-    // I want to randomly insert half of the cards from the deck to the player array and the other half of the cards from the deck to the computer array
     for (let i = 0; i < 26; i++) {
-        computer.push(deck[i]);
+        computer.push(deck[0]);
         deck.shift();
     } 
+    for (let i = 0; i < 26; i++) {
+        player.push(deck[0]);
+        deck.shift();
+    }
 }
 
 function play() {
@@ -59,21 +62,6 @@ function play() {
     roundNumber = 1;
     round.innerHTML = 'Round: 1';
     showDrawBtn();
-}
-
-function restart() {
-    deck = [];
-    computer = [];
-    player = [];
-    cardsInComputerDeck = 0;
-    cardsInPlayerDeck = 0;
-    computerDeckDown.innerHTML = 'Cards In Deck: 0';
-    playerDeckDown.innerHTML = 'Cards In Deck: 0';
-    roundNumber = 0;
-    round.innerHTML = 'Round: 0';
-    winner.innerHTML = 'Winner:';
-    hideDrawBtn();
-    hideWarBtn();
 }
 
 function draw() {
@@ -96,6 +84,21 @@ function war() {
     // after the war button is clicked, it should randomly choose 3 cards to place (faced down) in face up slot for comptuer and player, subtract 3 from the computer and player's "cards in deck: "
     hideWarBtn();
     showDrawBtn();
+}
+
+function restart() {
+    deck = [];
+    computer = [];
+    player = [];
+    cardsInComputerDeck = 0;
+    cardsInPlayerDeck = 0;
+    computerDeckDown.innerHTML = 'Cards In Deck: 0';
+    playerDeckDown.innerHTML = 'Cards In Deck: 0';
+    roundNumber = 0;
+    round.innerHTML = 'Round: 0';
+    winner.innerHTML = 'Winner:';
+    hideDrawBtn();
+    hideWarBtn();
 }
 
 function showDrawBtn() {
