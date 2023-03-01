@@ -25,6 +25,9 @@ Project 1
 ## Stretch Goals
 
 - Players will have the opportunity to enter their own customizable usernames.
+- After the play or draw buttons are clicked, they should become inactive until the game is restarted (so that the player can't repeatedly hit the buttons while in the middle of a game or a turn). The player may hit the restart button at any point during the game. The war button will appear when there is a war and disappear after the war is over.
+- When the player clicks the buttons, they should flash a different color, so the player knows the browswer responded to their click.
+- There should be a button called "Rules" that when clicked displays the rules.
 - There will be a responsive web design to optimize viewing on screens of different sizes.
 - The fronts and backs of the cards will have an improved design to appear more like real-world playing cards.
 - There will be animations depicting the cards flip over.

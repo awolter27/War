@@ -65,19 +65,24 @@ function play() {
 }
 
 function draw() {
-    // after the draw button is clicked, it should randomly choose 1 card from each deck (computer, player) to turn over in face up slot, subtract 1 to computer and player's "cards in deck: 25"
-    // if computer wins, add 2 to computer's "cards in deck: 28", update round by 1, allow player to hit draw again to start the next round
-    // if player wins, add 2 to player's "cards in deck:", update round by 1, allow player to hit draw again to start the next round
-    // if there's a tie, hide the draw button, show the war button, so the player can click run the war function
-    // the first player with 0 in their deck loses, the other player wins, log winner at the bottom, hide the draw and war buttons 
-
-    // When the button is clicked, it'll flash white for half a second and then go back to what it was, need to write .flash = white in css
-    // const gameBtn = document.getElementById('gameBtn');
-    // function colorSignal(){
-    //     redBtn.classList.add('flash')
-    //     setTimeout(() => { redBtn.classList.remove('flash')}, (500))
-    // };
-    // redBtn.addEventListener('click', colorSignal);
+    // after the draw button is clicked, 1 random card from each deck (computer array and player array) will flip over into the face up slots
+        // subtract 1 from variables cardsInComputerDeck and cardsInPlayerDeck
+        // update HTML: computerDeckDown.innerHTML = `Cards In Deck: ${cardsInComputerDeck}` and playerDeckDown.innerHTML = `Cards In Deck: ${cardsInPlayerDeck}`
+        // add 1 to variable round
+        // update HTML: round.innerHTML = `Round: ${round}`
+        // need to grab the value of the first card in the array to flip up for both players and then update the inner HTML for the computer-deck-up and player-deck-up to reflect the value on the screen as well as delete that specific card from the array. The values need to be compared. The highest value wins.
+    // if the computer wins
+        // add 2 to the variable cardsInComputerDeck
+        // update HTML: computerDeckDown.innerHTML = `Cards In Deck: ${cardsInComputerDeck}`
+        // the two cards that were won will go into the bottom of their deck (at the end of the array)
+    // if the player wins
+        // add 2 to the variable cardsInPlayerDeck
+        // update HTML: computerDeckDown.innerHTML = playerDeckDown.innerHTML = `Cards In Deck: ${cardsInPlayerDeck}`
+        // the two cards that were won will go into the bottom of their deck (at the end of the array)
+    // if there's a tie
+        // show the war button, so the player can click run the war function
+    // winner
+        //the first player with 0 in their deck loses, the other player wins, log winner at the bottom, hide the draw and war buttons 
 }
 
 function war() {
