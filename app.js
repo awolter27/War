@@ -15,8 +15,6 @@ const winner = document.querySelector('.winner');
 let deck = [];
 let computer = [];
 let player = [];
-let cardsInComputerDeck = 0;
-let cardsInPlayerDeck = 0;
 let roundNumber = 0;
 
 function deckOfCards() {
@@ -55,61 +53,72 @@ function deal() {
 
 function play() {
     deal();
-    cardsInComputerDeck = 26;
-    cardsInPlayerDeck = 26;
-    computerDeckDown.innerHTML = 'Cards In Deck: 26';
-    playerDeckDown.innerHTML = 'Cards In Deck: 26';
-    roundNumber = 1;
-    round.innerHTML = 'Round: 1';
+    computerDeckDown.innerHTML = `Cards In Deck: 26`;
+    playerDeckDown.innerHTML = `Cards In Deck: 26`;
     showDrawBtn();
 }
 
 function draw() {
-    let computerCard = computer.shift();
-    let playerCard = player.shift();
-    cardsInComputerDeck--;
-    cardsInPlayerDeck--;
-    computerDeckDown.innerHTML = `Cards In Deck: ${cardsInComputerDeck}`;
-    playerDeckDown.innerHTML = `Cards In Deck: ${cardsInPlayerDeck}`;
-    computerDeckUp.innerHTML = `${computerCard}`;
-    playerDeckUp.innerHTML = `${playerCard}`;
-    if (values.indexOf(playerCard[0]) > values.indexOf(computerCard[0])) {
-        roundNumber++;
-        round.innerHTML = `Round: ${roundNumber}`;
-        winner.innerHTML = `Winner: Player has won round ${roundNumber}`;
-    } else if (values.indexOf(playerCard[0]) < values.indexOf(computerCard[0])) {
+    if (computer.length > 0 && player.length > 0) {
+        let computerCard = computer.shift();
+        let playerCard = player.shift();
+        computerDeckUp.innerHTML = computerCard;
+        playerDeckUp.innerHTML = playerCard;
         roundNumber++;
         round.innerHTML = `Round: ${roundNumber}`
-        winner.innerHTML = `Winner: Computer has won round ${roundNumber}`;
-    } else if (values.indexOf(playerCard[0]) === values.indexOf(computerCard[0])) {
-        showWarBtn();
+        if (values.indexOf(computerCard[0]) > values.indexOf(playerCard[0])) {
+            computer.push(computerCard, playerCard);
+            computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
+            winner.innerHTML = `Winner: Computer won round ${roundNumber}!`;
+        } else if (values.indexOf(computerCard[0]) < values.indexOf(playerCard[0])) {
+            player.push(playerCard, computerCard);
+            playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
+            winner.innerHTML = `Winner: Player won round ${roundNumber}!`;
+        } else if (values.indexOf(computerCard[0]) === values.indexOf(playerCard[0])) {
+            hideDrawBtn();
+            showWarBtn();
+            winner.innerHTML = `Winner: Round ${roundNumber} is a tie!`;
+        }
+    } else if (computer.length = 0) {
+        player.push(playerCard, computerCard);
+        playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
+        hideDrawBtn();
+        hideWarBtn();
+        winner.innerHTML = 'Winner: Player!';
+    } else if (player.length = 0) {
+        computer.push(computerCard, playerCard);
+        computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
+        hideDrawBtn();
+        hideWarBtn();
+        winner.innerHTML = 'Winner: Computer!';
     }
-
-    // need to grab the value of the first card in the array to flip up for both players and then update the inner HTML for the computer-deck-up and player-deck-up to reflect the value on the screen as well as delete that specific card from the array. The values need to be compared. The highest value wins.
-    //// if the computer wins
-    // add 2 to the variable cardsInComputerDeck
-    // update HTML: computerDeckDown.innerHTML = `Cards In Deck: ${cardsInComputerDeck}`
-    // the two cards that were won will go into the bottom of their deck (at the end of the array .push())
-    ////// if the player wins
-    // add 2 to the variable cardsInPlayerDeck
-    // update HTML: computerDeckDown.innerHTML = playerDeckDown.innerHTML = `Cards In Deck: ${cardsInPlayerDeck}`
-    // the two cards that were won will go into the bottom of their deck (at the end of the array)
-    ////// winner
-    //the first player with 0 in their deck loses, the other player wins, log winner at the bottom, hide the draw and war buttons 
 }
 
 function war() {
-    // after the war button is clicked, it should randomly choose 3 cards to place (faced down) in face up slot for comptuer and player, subtract 3 from the computer and player's "cards in deck: "
-    hideWarBtn();
-    showDrawBtn();
+    if (computer.length >= 4 && player.length >= 4) {
+        let computerCardWar = computer.splice(0, 3);
+        let playerCardWar = player.splice(0, 3);
+        computerDeckUp.innerHTML = '';
+        playerDeckUp.innerHTML = '';
+        computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
+        playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
+        hideWarBtn();
+        showDrawBtn();
+    } else if (computer.length < 4) {
+        hideDrawBtn();
+        hideWarBtn();
+        winner.innerHTML = `Computer has insufficient cards to go to war. Winner: Player!`;
+    } else if (player.length < 4) {
+        hideDrawBtn();
+        hideWarBtn();
+        winner.innerHTML = `Player has insufficient cards to go to war. Winner: Computer!`;
+    }
 }
 
 function restart() {
     deck = [];
     computer = [];
     player = [];
-    cardsInComputerDeck = 0;
-    cardsInPlayerDeck = 0;
     computerDeckDown.innerHTML = 'Cards In Deck: 0';
     playerDeckDown.innerHTML = 'Cards In Deck: 0';
     roundNumber = 0;
