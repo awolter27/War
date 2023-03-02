@@ -24,9 +24,9 @@ body {
 }
 
 h1 {
-    border: rgb(255, 255, 255) solid 4px;
+    border: rgb(255, 255, 255) solid 8px;
     border-radius: 5%;
-    font-size: 110px;
+    font-size: 130px;
     margin: 20px;
     padding: 10px 20px 10px 20px;
 }
@@ -40,7 +40,7 @@ h1 {
     background-color: rgb(255, 255, 255);
     border: black solid 3px;
     color: black;
-    font-size: 30px;
+    font-size: 45px;
     margin: 20px;
     padding: 10px;
     text-align: center;
@@ -48,7 +48,7 @@ h1 {
 
 img {
     height: auto;
-    width: 350px;
+    width: 400px;
 }
 
 .right {
@@ -79,16 +79,16 @@ img {
     border-radius: 9px;
     color: rgb(255, 255, 255);
     float: left;
-    font-size: 55px;
+    font-size: 60px;
     height: 350px;
-    margin: 5px;
-    padding: 120px 1px;
+    margin: 20px 20px;
+    padding: 110px 1px;
     width: 295px;
 }
 
 .computer-deck-up,
 .player-deck-up {
-    font-size: 75px;
+    font-size: 100px;
 }
 
 #right-btn-box {
@@ -100,7 +100,7 @@ img {
     background-color: rgb(158, 174, 180);
     border: black solid 3px;
     color: rgb(255, 255, 255);
-    font-size: 30px;
+    font-size: 50px;
     margin: 20px;
     padding: 10px;
     text-align: center;
