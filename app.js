@@ -34,7 +34,7 @@ function shuffle() {
     deckOfCards();
     for (let i = 0; i < 1000; i++) {
         let randomIndex1 = Math.floor(Math.random() * deck.length);
-        let randomIndex2 = Math.floor(Math.random() * deck.length); 
+        let randomIndex2 = Math.floor(Math.random() * deck.length);
         let placeholder = deck[randomIndex1];
         deck[randomIndex1] = deck[randomIndex2];
         deck[randomIndex2] = placeholder;
@@ -46,7 +46,7 @@ function deal() {
     for (let i = 0; i < 26; i++) {
         computer.push(deck[0]);
         deck.shift();
-    } 
+    }
     for (let i = 0; i < 26; i++) {
         player.push(deck[0]);
         deck.shift();
@@ -65,24 +65,37 @@ function play() {
 }
 
 function draw() {
-    // after the draw button is clicked, 1 random card from each deck (computer array and player array) will flip over into the face up slots
-        // subtract 1 from variables cardsInComputerDeck and cardsInPlayerDeck
-        // update HTML: computerDeckDown.innerHTML = `Cards In Deck: ${cardsInComputerDeck}` and playerDeckDown.innerHTML = `Cards In Deck: ${cardsInPlayerDeck}`
-        // add 1 to variable round
-        // update HTML: round.innerHTML = `Round: ${round}`
-        // need to grab the value of the first card in the array to flip up for both players and then update the inner HTML for the computer-deck-up and player-deck-up to reflect the value on the screen as well as delete that specific card from the array. The values need to be compared. The highest value wins.
-    // if the computer wins
-        // add 2 to the variable cardsInComputerDeck
-        // update HTML: computerDeckDown.innerHTML = `Cards In Deck: ${cardsInComputerDeck}`
-        // the two cards that were won will go into the bottom of their deck (at the end of the array)
-    // if the player wins
-        // add 2 to the variable cardsInPlayerDeck
-        // update HTML: computerDeckDown.innerHTML = playerDeckDown.innerHTML = `Cards In Deck: ${cardsInPlayerDeck}`
-        // the two cards that were won will go into the bottom of their deck (at the end of the array)
-    // if there's a tie
-        // show the war button, so the player can click run the war function
-    // winner
-        //the first player with 0 in their deck loses, the other player wins, log winner at the bottom, hide the draw and war buttons 
+    let computerCard = computer.shift();
+    let playerCard = player.shift();
+    cardsInComputerDeck--;
+    cardsInPlayerDeck--;
+    computerDeckDown.innerHTML = `Cards In Deck: ${cardsInComputerDeck}`;
+    playerDeckDown.innerHTML = `Cards In Deck: ${cardsInPlayerDeck}`;
+    computerDeckUp.innerHTML = `${computerCard}`;
+    playerDeckUp.innerHTML = `${playerCard}`;
+    if (values.indexOf(playerCard[0]) > values.indexOf(computerCard[0])) {
+        roundNumber++;
+        round.innerHTML = `Round: ${roundNumber}`;
+        winner.innerHTML = `Winner: Player has won round ${roundNumber}`;
+    } else if (values.indexOf(playerCard[0]) < values.indexOf(computerCard[0])) {
+        roundNumber++;
+        round.innerHTML = `Round: ${roundNumber}`
+        winner.innerHTML = `Winner: Computer has won round ${roundNumber}`;
+    } else if (values.indexOf(playerCard[0]) === values.indexOf(computerCard[0])) {
+        showWarBtn();
+    }
+
+    // need to grab the value of the first card in the array to flip up for both players and then update the inner HTML for the computer-deck-up and player-deck-up to reflect the value on the screen as well as delete that specific card from the array. The values need to be compared. The highest value wins.
+    //// if the computer wins
+    // add 2 to the variable cardsInComputerDeck
+    // update HTML: computerDeckDown.innerHTML = `Cards In Deck: ${cardsInComputerDeck}`
+    // the two cards that were won will go into the bottom of their deck (at the end of the array .push())
+    ////// if the player wins
+    // add 2 to the variable cardsInPlayerDeck
+    // update HTML: computerDeckDown.innerHTML = playerDeckDown.innerHTML = `Cards In Deck: ${cardsInPlayerDeck}`
+    // the two cards that were won will go into the bottom of their deck (at the end of the array)
+    ////// winner
+    //the first player with 0 in their deck loses, the other player wins, log winner at the bottom, hide the draw and war buttons 
 }
 
 function war() {
