@@ -1,6 +1,3 @@
-const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-const suits = ['♣', '♦', '♥', '♠'];
-
 const playBtn = document.querySelector('.play');
 const restartBtn = document.querySelector('.restart');
 const drawBtn = document.querySelector('.draw');
@@ -11,6 +8,9 @@ const computerDeckUp = document.querySelector('.computer-deck-up');
 const playerDeckUp = document.querySelector('.player-deck-up');
 const round = document.querySelector('.round');
 const winner = document.querySelector('.winner');
+
+const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+const suits = ['♣', '♦', '♥', '♠'];
 
 let deck = [];
 let computer = [];
@@ -45,13 +45,13 @@ function deal() {
     for (let i = 0; i < 26; i++) {
         computer.push(deck[0]);
         deck.shift();
-        computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
     }
     for (let i = 0; i < 26; i++) {
         player.push(deck[0]);
         deck.shift();
-        playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
     }
+    computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
+    playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
 }
 
 function play() {
@@ -69,30 +69,30 @@ function drawAndCompare() {
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
         roundNumber++;
         round.innerHTML = `Round: ${roundNumber}`
-        if (values.indexOf(computerCard[0]) > values.indexOf(playerCard[0])) {
+        if (values.indexOf(computerCard.slice(0, -1)) > values.indexOf(playerCard.slice(0, -1))) {
             computer.push(computerCard, playerCard);
             computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
             playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
             winner.innerHTML = `Winner: Computer won round ${roundNumber}!`;
-        } else if (values.indexOf(computerCard[0]) < values.indexOf(playerCard[0])) {
+        } else if (values.indexOf(computerCard.slice(0, -1)) < values.indexOf(playerCard.slice(0, -1))) {
             player.push(playerCard, computerCard);
             computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
             playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
             winner.innerHTML = `Winner: Player won round ${roundNumber}!`;
-        } else if (values.indexOf(computerCard[0]) === values.indexOf(playerCard[0])) {
+        } else if (values.indexOf(computerCard.slice(0, -1)) === values.indexOf(playerCard.slice(0, -1))) {
             warPlaceholder.push(computerCard, playerCard);
             hideDrawBtn();
             showWarBtn();
             winner.innerHTML = `Winner: Round ${roundNumber} is a tie!`;
         }
-    } else if (computer.length = 0) {
+    } else if (computer.length === 0) {
         player.push(playerCard, computerCard);
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
         hideDrawBtn();
         hideWarBtn();
         winner.innerHTML = 'Winner: Player!';
-    } else if (player.length = 0) {
+    } else if (player.length === 0) {
         computer.push(computerCard, playerCard);
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
@@ -104,56 +104,46 @@ function drawAndCompare() {
 
 function warAndCompare() {
     if (computer.length > 4 && player.length > 4) {
-        // console.log(computer.length);
-        // console.log(player.length);
         let computerCard = computer.splice(0, 4);
         let playerCard = player.splice(0, 4);
         computerDeckUp.innerHTML = computerCard[3];
         playerDeckUp.innerHTML = playerCard[3];
-        // console.log(computerCard);
-        // console.log(playerCard);
-        // console.log(computerCard[3]);
-        // console.log(playerCard[3]);
-        // console.log(computerCard[3][0]);
-        // console.log(playerCard[3][0]);
-        // console.log(computer);
-        // console.log(player);
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
         roundNumber++;
         round.innerHTML = `Round: ${roundNumber}`
-        if (values.indexOf(computerCard[3][0]) > values.indexOf(playerCard[3][0])) {
+        if (values.indexOf(computerCard[3].slice(0, -1)) > values.indexOf(playerCard[3].slice(0, -1))) {
             computer.push(computerCard, playerCard, warPlaceholder);
-            // console.log(`computer: ${computer} length: ${computer.length}`); // THIS ONE 
-            // console.log(`player: ${player} length: ${player.length}`);
+            computer = computer.flat();
+            warPlaceholder = [];
             computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
             playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
             winner.innerHTML = `Winner: Computer won round ${roundNumber}!`;
             hideWarBtn();
             showDrawBtn();
-        } else if (values.indexOf(computerCard[3][0]) < values.indexOf(playerCard[3][0])) {
+        } else if (values.indexOf(computerCard[3].slice(0, -1)) < values.indexOf(playerCard[3].slice(0, -1))) {
             player.push(playerCard, computerCard, warPlaceholder);
-            // console.log(`computer: ${computer} length: ${computer.length}`);
-            // console.log(`player: ${player} length: ${player.length}`);
+            player = player.flat();
+            warPlaceholder = [];
             computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
             playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
             winner.innerHTML = `Winner: Player won round ${roundNumber}!`;
             hideWarBtn();
             showDrawBtn();
-        } else if (values.indexOf(computerCard[3][0]) === values.indexOf(playerCard[3][0])) {
-            // console.log(`computer: ${computer} length: ${computer.length}`);
-            // console.log(`player: ${player} length: ${player.length}`);
+        } else if (values.indexOf(computerCard[3].slice(0, -1)) === values.indexOf(playerCard[3].slice(0, -1))) {
             showWarBtn();
             winner.innerHTML = `Winner: Round ${roundNumber} is a tie!`;
         }
     } else if (computer.length < 4) {
-        player.push(playerCard, computerCard);
+        player.push(warPlaceholder);
+        player = player.flat();
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
         hideWarBtn();
         winner.innerHTML = 'Computer has insufficient cards to go to war. Winner: Player!';;
     } else if (player.length < 4) {
-        computer.push(computerCard, playerCard);
+        computer.push(warPlaceholder);
+        computer = computer.flat();
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
         hideWarBtn();
@@ -165,9 +155,12 @@ function restart() {
     deck = [];
     computer = [];
     player = [];
+    warPlaceholder = [];
+    roundNumber = 0;
     computerDeckDown.innerHTML = 'Cards In Deck: 0';
     playerDeckDown.innerHTML = 'Cards In Deck: 0';
-    roundNumber = 0;
+    computerDeckUp.innerHTML = '';
+    playerDeckUp.innerHTML = '';
     round.innerHTML = 'Round: 0';
     winner.innerHTML = 'Winner:';
     hideDrawBtn();
