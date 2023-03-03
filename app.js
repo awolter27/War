@@ -85,15 +85,15 @@ function drawAndCompare() {
             showWarBtn();
             winner.innerHTML = `Winner: Round ${roundNumber} is a tie!`;
         }
-    } else if (computer.length === 0) {
-        player.push(playerCard, computerCard);
+    }
+
+    if (computer.length === 0) {
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
         hideDrawBtn();
         hideWarBtn();
         winner.innerHTML = 'Winner: Player!';
     } else if (player.length === 0) {
-        computer.push(computerCard, playerCard);
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
         hideDrawBtn();
@@ -103,7 +103,7 @@ function drawAndCompare() {
 }
 
 function warAndCompare() {
-    if (computer.length > 4 && player.length > 4) {
+    if (computer.length > 3 && player.length > 4) {
         let computerCard = computer.splice(0, 4);
         let playerCard = player.splice(0, 4);
         computerDeckUp.innerHTML = computerCard[3];
@@ -134,7 +134,9 @@ function warAndCompare() {
             showWarBtn();
             winner.innerHTML = `Winner: Round ${roundNumber} is a tie!`;
         }
-    } else if (computer.length < 4) {
+    }
+    
+    if (computer.length < 4) {
         player.push(warPlaceholder);
         player = player.flat();
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
