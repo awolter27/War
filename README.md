@@ -27,7 +27,6 @@ Project 1
 - Players will have the opportunity to enter their own customizable usernames.
 - Players will be able to choose from various icons to place next to their usernames.
 - When the player clicks the buttons, they should flash a different color, so the player knows the browswer responded to their click.
-- There should be a button called "Rules" that when clicked displays the rules.
 - There will be a responsive web design to optimize viewing on screens of different sizes.
 - The fronts and backs of the cards will have an improved design to appear more like real-world playing cards.
 - There will be animations depicting the cards flip over.

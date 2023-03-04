@@ -47,6 +47,10 @@ h1 {
     text-align: center;
 }
 
+.rules {
+    padding: 10px 100px;
+}
+
 img {
     height: auto;
     width: 400px;

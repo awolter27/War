@@ -29,11 +29,11 @@ h1 {
 ul {
     display: flex;
     flex-direction: column;
-    margin: 175px 0px; 
+    margin: 170px 0px; 
 }
 
 li {
-    color: rgb(158, 174, 180);
+    color: rgb(141, 166, 175);
     font-size: 40px;
     margin: 10px 50px 10px 90px;
 }

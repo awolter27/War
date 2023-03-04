@@ -20,10 +20,6 @@ let player = [];
 let warPlaceholder = [];
 let roundNumber = 0;
 
-// function rules() {
-//     window.open('file:///Users/allisonwolter/Downloads/Projects/War/rules.html');
-// }
-
 function deckOfCards() {
     let cards = [];
     for (let i = 0; i < values.length; i++) {
