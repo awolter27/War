@@ -1,3 +1,4 @@
+const rulesBtn = document.querySelector('.rules');
 const playBtn = document.querySelector('.play');
 const restartBtn = document.querySelector('.restart');
 const drawBtn = document.querySelector('.draw');
@@ -17,6 +18,10 @@ let computer = [];
 let player = [];
 let warPlaceholder = [];
 let roundNumber = 0;
+
+function rules() {
+    window.open('https://github.com/awolter27/War/tree/main#rules');
+}
 
 function deckOfCards() {
     let cards = [];
@@ -55,8 +60,8 @@ function deal() {
 }
 
 function play() {
-    deal();
-    showDrawBtn();
+        deal();
+        showDrawBtn();
 }
 
 function drawAndCompare() {
@@ -185,6 +190,7 @@ function hideWarBtn() {
     document.querySelector('.go-to-war').style.display = 'none';
 }
 
+rulesBtn.addEventListener('click', rules);
 playBtn.addEventListener('click', play);
 restartBtn.addEventListener('click', restart);
 drawBtn.addEventListener('click', drawAndCompare);
