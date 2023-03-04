@@ -3,6 +3,7 @@ const playBtn = document.querySelector('.play');
 const restartBtn = document.querySelector('.restart');
 const drawBtn = document.querySelector('.draw');
 const warBtn = document.querySelector('.go-to-war');
+
 const computerDeckDown = document.querySelector('.computer-deck-down');
 const playerDeckDown = document.querySelector('.player-deck-down');
 const computerDeckUp = document.querySelector('.computer-deck-up');
@@ -19,9 +20,9 @@ let player = [];
 let warPlaceholder = [];
 let roundNumber = 0;
 
-function rules() {
-    window.open('file:///Users/allisonwolter/Downloads/Projects/War/rules.html');
-}
+// function rules() {
+//     window.open('file:///Users/allisonwolter/Downloads/Projects/War/rules.html');
+// }
 
 function deckOfCards() {
     let cards = [];
@@ -60,14 +61,20 @@ function deal() {
 }
 
 function play() {
-    deal();
-    showDrawBtn();
+    if (computer.length === 0 && player.length === 0) {
+        deal();
+        showDrawBtn();
+    }
 }
 
 function drawAndCompare() {
     if (computer.length > 0 && player.length > 0) {
         let computerCard = computer.shift();
         let playerCard = player.shift();
+        console.log(computerCard); // DELETE!!!!!!!!!!!!!
+        console.log(playerCard); // DELETE!!!!!!!!!!!!!
+        console.log(computer); // DELETE!!!!!!!!!!!!!
+        console.log(player); // DELETE!!!!!!!!!!!!!
         computerDeckUp.innerHTML = computerCard;
         playerDeckUp.innerHTML = playerCard;
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
@@ -89,6 +96,9 @@ function drawAndCompare() {
             hideDrawBtn();
             showWarBtn();
             winner.innerHTML = `Winner: Round ${roundNumber} is a tie!`;
+            console.log(computer); // DELETE!!!!!!!!!!!!!
+            console.log(player); // DELETE!!!!!!!!!!!!!
+            console.log(warPlaceholder); // DELETE!!!!!!!!!!!!!
         }
     }
 
@@ -139,9 +149,7 @@ function warAndCompare() {
             showWarBtn();
             winner.innerHTML = `Winner: Round ${roundNumber} is a tie!`;
         }
-    }
-
-    if (computer.length < 4) {
+    } else if (computer.length < 4) {
         player.push(warPlaceholder);
         player = player.flat();
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
@@ -164,14 +172,14 @@ function restart() {
     player = [];
     warPlaceholder = [];
     roundNumber = 0;
+    hideDrawBtn();
+    hideWarBtn();
     computerDeckDown.innerHTML = 'Cards In Deck: 0';
     playerDeckDown.innerHTML = 'Cards In Deck: 0';
     computerDeckUp.innerHTML = '';
     playerDeckUp.innerHTML = '';
     round.innerHTML = 'Round: 0';
     winner.innerHTML = 'Winner:';
-    hideDrawBtn();
-    hideWarBtn();
 }
 
 function showDrawBtn() {

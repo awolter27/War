@@ -40,6 +40,7 @@ h1 {
     background-color: rgb(255, 255, 255);
     border: black solid 3px;
     color: black;
+    cursor: pointer;
     font-size: 45px;
     margin: 20px;
     padding: 10px;
@@ -92,6 +93,7 @@ img {
 }
 
 #right-btn-box {
+    cursor: pointer;
     display: flex;
     flex-direction: row;
 }
@@ -100,6 +102,7 @@ img {
     background-color: rgb(158, 174, 180);
     border: black solid 3px;
     color: rgb(255, 255, 255);
+    cursor: pointer;
     font-size: 50px;
     margin: 20px;
     padding: 10px;
