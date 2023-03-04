@@ -121,13 +121,30 @@ img {
     display: none;
 }
 
-.round,
+.right-txt-box {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.round {
+    color: black;
+    border: black solid 4px;
+    border-radius: 6%;
+    font-size: 50px;
+    margin: 10px 20px;
+    padding: 3px 10px 3px 10px;
+    text-align: center;
+    width: 16vw;
+}
+
 .winner {
     color: black;
     border: black solid 4px;
     border-radius: 6%;
     font-size: 50px;
-    margin: 20px;
+    margin: 10px 20px;
     padding: 3px 10px 3px 10px;
     text-align: center;
+    width: 45vw;
 }

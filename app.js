@@ -1,4 +1,3 @@
-const rulesBtn = document.querySelector('.rules');
 const playBtn = document.querySelector('.play');
 const restartBtn = document.querySelector('.restart');
 const drawBtn = document.querySelector('.draw');
@@ -17,6 +16,8 @@ const suits = ['♣', '♦', '♥', '♠'];
 let deck = [];
 let computer = [];
 let player = [];
+let computerCard = [];
+let playerCard = [];
 let warPlaceholder = [];
 let roundNumber = 0;
 
@@ -60,23 +61,19 @@ function play() {
     if (computer.length === 0 && player.length === 0) {
         deal();
         showDrawBtn();
-    }
+    } 
 }
 
 function drawAndCompare() {
     if (computer.length > 0 && player.length > 0) {
-        let computerCard = computer.shift();
-        let playerCard = player.shift();
-        console.log(computerCard); // DELETE!!!!!!!!!!!!!
-        console.log(playerCard); // DELETE!!!!!!!!!!!!!
-        console.log(computer); // DELETE!!!!!!!!!!!!!
-        console.log(player); // DELETE!!!!!!!!!!!!!
-        computerDeckUp.innerHTML = computerCard;
-        playerDeckUp.innerHTML = playerCard;
+        computerCard = computer.shift();
+        playerCard = player.shift();
+        roundNumber++;
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
-        roundNumber++;
-        round.innerHTML = `Round: ${roundNumber}`
+        computerDeckUp.innerHTML = computerCard;
+        playerDeckUp.innerHTML = playerCard;
+        round.innerHTML = `Round: ${roundNumber}`;
         if (values.indexOf(computerCard.slice(0, -1)) > values.indexOf(playerCard.slice(0, -1))) {
             computer.push(computerCard, playerCard);
             computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
@@ -92,68 +89,64 @@ function drawAndCompare() {
             hideDrawBtn();
             showWarBtn();
             winner.innerHTML = `Winner: Round ${roundNumber} is a tie!`;
-            console.log(computer); // DELETE!!!!!!!!!!!!!
-            console.log(player); // DELETE!!!!!!!!!!!!!
-            console.log(warPlaceholder); // DELETE!!!!!!!!!!!!!
         }
     }
-
     if (computer.length === 0) {
-        computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
-        playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
         hideDrawBtn();
         hideWarBtn();
+        computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
+        playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
         winner.innerHTML = 'Winner: Player!';
     } else if (player.length === 0) {
-        computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
-        playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
         hideDrawBtn();
         hideWarBtn();
+        computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
+        playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
         winner.innerHTML = 'Winner: Computer!';
     }
 }
 
 function warAndCompare() {
-    if (computer.length > 3 && player.length > 4) {
-        let computerCard = computer.splice(0, 4);
-        let playerCard = player.splice(0, 4);
-        computerDeckUp.innerHTML = computerCard[3];
-        playerDeckUp.innerHTML = playerCard[3];
+    if (computer.length > 3 && player.length > 3) {
+        computerCard = computer.splice(0, 4);
+        playerCard = player.splice(0, 4);
+        roundNumber++;
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
-        roundNumber++;
+        computerDeckUp.innerHTML = computerCard[3];
+        playerDeckUp.innerHTML = playerCard[3];
         round.innerHTML = `Round: ${roundNumber}`
         if (values.indexOf(computerCard[3].slice(0, -1)) > values.indexOf(playerCard[3].slice(0, -1))) {
             computer.push(computerCard, playerCard, warPlaceholder);
             computer = computer.flat();
             warPlaceholder = [];
+            hideWarBtn();
+            showDrawBtn();
             computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
             playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
             winner.innerHTML = `Winner: Computer won round ${roundNumber}!`;
-            hideWarBtn();
-            showDrawBtn();
         } else if (values.indexOf(computerCard[3].slice(0, -1)) < values.indexOf(playerCard[3].slice(0, -1))) {
             player.push(playerCard, computerCard, warPlaceholder);
             player = player.flat();
             warPlaceholder = [];
+            hideWarBtn();
+            showDrawBtn();
             computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
             playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
             winner.innerHTML = `Winner: Player won round ${roundNumber}!`;
-            hideWarBtn();
-            showDrawBtn();
         } else if (values.indexOf(computerCard[3].slice(0, -1)) === values.indexOf(playerCard[3].slice(0, -1))) {
             showWarBtn();
             winner.innerHTML = `Winner: Round ${roundNumber} is a tie!`;
         }
     } else if (computer.length < 4) {
-        player.push(warPlaceholder);
+        player.push(playerCard, computerCard, warPlaceholder);
         player = player.flat();
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
         hideWarBtn();
         winner.innerHTML = 'Computer has insufficient cards to go to war. Winner: Player!';;
     } else if (player.length < 4) {
-        computer.push(warPlaceholder);
+        computer.push(computerCard, playerCard, warPlaceholder);
         computer = computer.flat();
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
@@ -194,7 +187,6 @@ function hideWarBtn() {
     document.querySelector('.go-to-war').style.display = 'none';
 }
 
-rulesBtn.addEventListener('click', rules);
 playBtn.addEventListener('click', play);
 restartBtn.addEventListener('click', restart);
 drawBtn.addEventListener('click', drawAndCompare);
