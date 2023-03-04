@@ -20,7 +20,7 @@ let warPlaceholder = [];
 let roundNumber = 0;
 
 function rules() {
-    window.open('https://github.com/awolter27/War/tree/main#rules');
+    window.open('file:///Users/allisonwolter/Downloads/Projects/War/rules.html');
 }
 
 function deckOfCards() {
