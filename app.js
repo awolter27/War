@@ -60,8 +60,8 @@ function deal() {
 }
 
 function play() {
-        deal();
-        showDrawBtn();
+    deal();
+    showDrawBtn();
 }
 
 function drawAndCompare() {
@@ -140,7 +140,7 @@ function warAndCompare() {
             winner.innerHTML = `Winner: Round ${roundNumber} is a tie!`;
         }
     }
-    
+
     if (computer.length < 4) {
         player.push(warPlaceholder);
         player = player.flat();
