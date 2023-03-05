@@ -20,15 +20,16 @@ body {
     color: rgb(255, 255, 255);
     flex-direction: column;
     justify-content: space-around;
+    max-width: 30%;
     min-width: 25%;
 }
 
 h1 {
-    border: rgb(255, 255, 255) solid 8px;
+    border: rgb(255, 255, 255) solid 0.08em;
     border-radius: 5%;
-    font-size: 150px;
+    font-size: 10em;
     margin: 20px;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 20px;
 }
 
 #left-btn-box {
@@ -38,10 +39,10 @@ h1 {
 
 .left-btn {
     background-color: rgb(255, 255, 255);
-    border: black solid 3px;
+    border: black solid 0.09em;
     color: black;
     cursor: pointer;
-    font-size: 45px;
+    font-size: 3em;
     margin: 20px;
     padding: 10px;
     text-align: center;
@@ -53,18 +54,18 @@ h1 {
 
 img {
     height: auto;
-    width: 400px;
+    width: 32em;
 }
 
 .right {
     align-items: center;
     background-color: rgb(255, 255, 255);
-    border-left: black solid 3px;
+    border-left: black solid 0.28em;
     color: black;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 0 0 0 330px;
+    padding: 0 0 0 15%;
 }
 
 .computer-box,
@@ -75,25 +76,20 @@ img {
 .computer,
 .player {
     color: black;
-    font-size: 70px;
+    font-size: 5em;
 }
 
 .deck {
     background-color: rgb(158, 174, 180);
-    border: black solid 3px;
-    border-radius: 9px;
+    border: black solid 0.06em;
+    border-radius: 5%;
     color: rgb(255, 255, 255);
     float: left;
-    font-size: 60px;
-    height: 350px;
-    margin: 20px 20px;
-    padding: 110px 1px;
-    width: 295px;
-}
-
-.computer-deck-up,
-.player-deck-up {
-    font-size: 100px;
+    font-size: 4.5em;
+    height: 6em;
+    margin: 20px;
+    padding: 125px 1px;
+    width: 5em;
 }
 
 #right-btn-box {
@@ -104,10 +100,10 @@ img {
 
 .right-btn {
     background-color: rgb(158, 174, 180);
-    border: black solid 3px;
+    border: black solid 0.08em;
     color: rgb(255, 255, 255);
     cursor: pointer;
-    font-size: 50px;
+    font-size: 3em;
     margin: 20px;
     padding: 10px;
     text-align: center;
@@ -129,22 +125,22 @@ img {
 
 .round {
     color: black;
-    border: black solid 4px;
+    border: black solid 0.08em;
     border-radius: 6%;
-    font-size: 50px;
+    font-size: 3.5em;
     margin: 10px 20px;
-    padding: 3px 10px 3px 10px;
+    padding: 3px 10px;
     text-align: center;
     width: 16vw;
 }
 
 .winner {
     color: black;
-    border: black solid 4px;
+    border: black solid 0.08em;
     border-radius: 6%;
-    font-size: 50px;
+    font-size: 3.5em;
     margin: 10px 20px;
-    padding: 3px 10px 3px 10px;
+    padding: 3px 10px;
     text-align: center;
-    width: 45vw;
+    width: 50vw;
 }

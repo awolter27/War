@@ -61,7 +61,7 @@ function play() {
     if (computer.length === 0 && player.length === 0) {
         deal();
         showDrawBtn();
-    } 
+    }
 }
 
 function drawAndCompare() {
@@ -135,6 +135,8 @@ function warAndCompare() {
             playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
             winner.innerHTML = `Winner: Player won round ${roundNumber}!`;
         } else if (values.indexOf(computerCard[3].slice(0, -1)) === values.indexOf(playerCard[3].slice(0, -1))) {
+            warPlaceholder.push(computerCard, playerCard);
+            warPlaceholder = warPlaceholder.flat();
             showWarBtn();
             winner.innerHTML = `Winner: Round ${roundNumber} is a tie!`;
         }
