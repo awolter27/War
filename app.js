@@ -177,6 +177,12 @@ function restart() {
     winner.innerHTML = 'Winner:';
 }
 
+// function blink() {
+//     playBtn.style.background = red;
+//     setTimeout(() => {playBtn.style.background = white}, 1000);
+//   }
+//   blink();
+
 function showDrawBtn() {
     document.querySelector('.draw').style.display = 'inline-block';
 }
