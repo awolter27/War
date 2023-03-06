@@ -84,8 +84,9 @@ function drawAndCompare() {
             computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
             playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
             winner.innerHTML = `Winner: Player won round ${roundNumber}!`;
-        } else if (values.indexOf(computerCard.slice(0, -1)) === values.indexOf(playerCard.slice(0, -1))) {
+        } else { 
             warPlaceholder.push(computerCard, playerCard);
+            warPlaceholder = warPlaceholder.flat();
             hideDrawBtn();
             showWarBtn();
             winner.innerHTML = `Winner: Round ${roundNumber} is a tie!`;
@@ -97,6 +98,7 @@ function drawAndCompare() {
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
         winner.innerHTML = 'Winner: Player!';
+
     } else if (player.length === 0) {
         hideDrawBtn();
         hideWarBtn();
@@ -141,18 +143,20 @@ function warAndCompare() {
             winner.innerHTML = `Winner: Round ${roundNumber} is a tie!`;
         }
     } else if (computer.length < 4) {
-        player.push(playerCard, computerCard, warPlaceholder);
+        player.push(warPlaceholder, computer);
         player = player.flat();
+        computer = [];
+        hideWarBtn();
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
-        hideWarBtn();
-        winner.innerHTML = 'Computer has insufficient cards to go to war. Winner: Player!';;
+        winner.innerHTML = 'Computer has insufficient cards to go to war. Winner: Player!';
     } else if (player.length < 4) {
-        computer.push(computerCard, playerCard, warPlaceholder);
+        computer.push(warPlaceholder, player);
         computer = computer.flat();
+        player = [];
+        hideWarBtn();
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
-        hideWarBtn();
         winner.innerHTML = 'Player has insufficient cards to go to war. Winner: Computer!';
     }
 }
