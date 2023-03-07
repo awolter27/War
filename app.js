@@ -17,17 +17,17 @@ let deck = [];
 let computer = [];
 let player = [];
 let computerCard = [];
-let computerCardImg = ; 
+let computerCardImg = document.createElement('img'); 
 let playerCard = [];
-let playerCardImg = ;
+let playerCardImg = document.createElement('img'); ;
 let warPlaceholder = [];
 let roundNumber = 0;
 
 function deckOfCards() {
     for (let i = 0; i < values.length; i++) {
         for (let j = 0; j < suits.length; j++) {
-            let cards = `${values[i]}${suits[j]}`
-            deck.push(cards);
+            let card = `${values[i]}${suits[j]}`
+            deck.push(card);
         }
     }
     return deck;
@@ -69,6 +69,8 @@ function drawAndCompare() {
     if (computer.length > 0 && player.length > 0) {
         computerCard = computer.shift();
         playerCard = player.shift();
+        computerCardImg.src = "./Card-Images" + computerCard + ".jpg"
+        playerCardImg.src = "./Card-Images" + playerCard + ".jpg"
         roundNumber++;
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
@@ -113,6 +115,8 @@ function warAndCompare() {
     if (computer.length > 3 && player.length > 3) {
         computerCard = computer.splice(0, 4);
         playerCard = player.splice(0, 4);
+        computerCardImg.src = "./Card-Images" + computerCard + ".jpg"
+        playerCardImg.src = "./Card-Images" + playerCard + ".jpg"
         roundNumber++;
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
