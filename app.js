@@ -17,15 +17,16 @@ let deck = [];
 let computer = [];
 let player = [];
 let computerCard = [];
+let computerCardImg = ; 
 let playerCard = [];
+let playerCardImg = ;
 let warPlaceholder = [];
 let roundNumber = 0;
 
 function deckOfCards() {
-    let cards = [];
     for (let i = 0; i < values.length; i++) {
         for (let j = 0; j < suits.length; j++) {
-            cards = `${values[i]}${suits[j]}`
+            let cards = `${values[i]}${suits[j]}`
             deck.push(cards);
         }
     }
@@ -176,12 +177,6 @@ function restart() {
     round.innerHTML = 'Round: 0';
     winner.innerHTML = 'Winner:';
 }
-
-// function blink() {
-//     playBtn.style.background = red;
-//     setTimeout(() => {playBtn.style.background = white}, 1000);
-//   }
-//   blink();
 
 function showDrawBtn() {
     document.querySelector('.draw').style.display = 'inline-block';
