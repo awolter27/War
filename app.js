@@ -1,7 +1,7 @@
 const playBtn = document.querySelector('.play');
 const restartBtn = document.querySelector('.restart');
 const drawBtn = document.querySelector('.draw');
-const warBtn = document.querySelector('.go-to-war');
+const warBtn = document.querySelector('.war');
 
 const computerDeckDown = document.querySelector('.computer-deck-down');
 const playerDeckDown = document.querySelector('.player-deck-down');
@@ -17,9 +17,7 @@ let deck = [];
 let computer = [];
 let player = [];
 let computerCard = [];
-let computerCardImg = document.createElement('img'); 
 let playerCard = [];
-let playerCardImg = document.createElement('img'); ;
 let warPlaceholder = [];
 let roundNumber = 0;
 
@@ -69,13 +67,13 @@ function drawAndCompare() {
     if (computer.length > 0 && player.length > 0) {
         computerCard = computer.shift();
         playerCard = player.shift();
-        computerCardImg.src = "./Card-Images" + computerCard + ".png"
-        playerCardImg.src = "./Card-Images" + playerCard + ".png"
         roundNumber++;
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
-        computerDeckUp.innerHTML = computerCard;
-        playerDeckUp.innerHTML = playerCard;
+        computerDeckUp.style.backgroundImage = `url("./Card_Images/${computerCard}.png")`;
+        playerDeckUp.style.backgroundImage = `url("./Card_Images/${playerCard}.png")`;
+        computerDeckUp.classList.add('noBorder')
+        playerDeckUp.classList.add('noBorder')
         round.innerHTML = `Round: ${roundNumber}`;
         if (values.indexOf(computerCard.slice(0, -1)) > values.indexOf(playerCard.slice(0, -1))) {
             computer.push(computerCard, playerCard);
@@ -115,13 +113,13 @@ function warAndCompare() {
     if (computer.length > 3 && player.length > 3) {
         computerCard = computer.splice(0, 4);
         playerCard = player.splice(0, 4);
-        computerCardImg.src = "./Card-Images" + computerCard + ".png"
-        playerCardImg.src = "./Card-Images" + playerCard + ".png"
+        // computerCardImg.src = "./Card-Images/" + computerCard + ".png";
+        // playerCardImg.src = "./Card-Images/" + playerCard + ".png";
         roundNumber++;
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
-        computerDeckUp.innerHTML = computerCard[3];
-        playerDeckUp.innerHTML = playerCard[3];
+        // computerDeckUp.innerHTML = computerCard[3];
+        // playerDeckUp.innerHTML = playerCard[3];
         round.innerHTML = `Round: ${roundNumber}`
         if (values.indexOf(computerCard[3].slice(0, -1)) > values.indexOf(playerCard[3].slice(0, -1))) {
             computer.push(computerCard, playerCard, warPlaceholder);
@@ -191,11 +189,11 @@ function hideDrawBtn() {
 }
 
 function showWarBtn() {
-    document.querySelector('.go-to-war').style.display = 'inline-block';
+    document.querySelector('.war').style.display = 'inline-block';
 }
 
 function hideWarBtn() {
-    document.querySelector('.go-to-war').style.display = 'none';
+    document.querySelector('.war').style.display = 'none';
 }
 
 playBtn.addEventListener('click', play);

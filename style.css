@@ -52,7 +52,7 @@ h1 {
     padding: 10px 100px;
 }
 
-img {
+.left-img {
     height: auto;
     width: 32em;
 }
@@ -90,6 +90,21 @@ img {
     margin: 20px;
     padding: 125px 1px;
     width: 5em;
+
+}
+
+.player-deck-up,
+.computer-deck-up {
+    background-image: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(158, 174, 180);
+}
+
+.noBorder {
+    background-color: white;
+    border: none;
 }
 
 #right-btn-box {
@@ -114,8 +129,8 @@ img {
     display: none;
 }
 
-.go-to-war {
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+.war {
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
     color: rgb(255, 255, 255);
     display: none;
 }
