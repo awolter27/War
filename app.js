@@ -97,7 +97,7 @@ function drawAndCompare() {
             computerCardsInDeck.innerHTML = `Cards In Deck: ${computer.length}`;
             playerCardsInDeck.innerHTML = `Cards In Deck: ${player.length}`;
             winner.innerHTML = `Winner: Player won round ${roundNumber}!`;
-        } else { 
+        } else {
             warPlaceholder.push(computerCard, playerCard);
             warPlaceholder = warPlaceholder.flat();
             hideDrawBtn();
@@ -235,6 +235,14 @@ function restart() {
         // computerDeckUp.width = '5em';
     // Attempt 8:
         // computerDeckUp.style.visibility = 'hidden';
+    // Attempt 9:
+        // computerDeckUp.style.backgroundImage = `url("")`;
+        // playerDeckUp.style.backgroundImage = `url("")`;
+    // Attempt 10:
+        // computerDeckUp.style.backgroundImage;
+        // playerDeckUp.style.backgroundImage;
+    // Attempt 11: 
+        //
     round.innerHTML = 'Round: 0';
     winner.innerHTML = 'Winner:';
 }
