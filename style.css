@@ -79,17 +79,29 @@ h1 {
     font-size: 5em;
 }
 
+.computer-cards-in-deck,
+.player-cards-in-deck {
+    color: black;
+    font-size: 3em;
+    padding: 10px;
+}
+
 .deck {
     background-color: rgb(158, 174, 180);
     border: black solid 0.06em;
     border-radius: 5%;
-    color: rgb(255, 255, 255);
     float: left;
-    font-size: 4.5em;
-    height: 6em;
+    height: 28em;
     margin: 20px;
-    padding: 125px 1px;
-    width: 5em;
+    width: 21em;
+}
+
+.computer-deck-down,
+.player-deck-down {
+    background-image: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .computer-deck-up,

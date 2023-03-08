@@ -28,6 +28,5 @@ Project 1
 - Players will be able to choose from various icons to place next to their usernames.
 - When the player clicks the buttons, they should flash a different color, so the player knows the browswer responded to their click.
 - There will be a responsive web design to optimize viewing on screens of different sizes.
-- The fronts and backs of the cards will have an improved design to appear more like real-world playing cards.
 - There will be animations depicting the cards flip over.
 - There will be animations depicting the cards sliding into the deck.
