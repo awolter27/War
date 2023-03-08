@@ -90,25 +90,23 @@ h1 {
     margin: 20px;
     padding: 125px 1px;
     width: 5em;
-
 }
 
-.player-deck-up,
-.computer-deck-up {
-    background-image: none;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+.computer-deck-up,
+.player-deck-up {
     background-color: rgb(158, 174, 180);
+    background-image: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
-.noBorder {
+.border {
     background-color: white;
     border: none;
 }
 
 #right-btn-box {
-    cursor: pointer;
     display: flex;
     flex-direction: row;
 }
@@ -120,7 +118,6 @@ h1 {
     margin: 20px;
     padding: 10px;
     text-align: center;
-    animation: glowing 1300ms infinite;
 }
 
 .draw {
@@ -142,20 +139,20 @@ h1 {
 }
 
 .round {
-    color: black;
     border: black solid 0.08em;
     border-radius: 6%;
+    color: black;
     font-size: 3.5em;
     margin: 10px 20px;
     padding: 3px 10px;
     text-align: center;
-    width: 16vw;
+    width: 19vw;
 }
 
 .winner {
-    color: black;
     border: black solid 0.08em;
     border-radius: 6%;
+    color: black;
     font-size: 3.5em;
     margin: 10px 20px;
     padding: 3px 10px;

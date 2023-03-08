@@ -72,8 +72,8 @@ function drawAndCompare() {
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
         computerDeckUp.style.backgroundImage = `url("./Card_Images/${computerCard}.png")`;
         playerDeckUp.style.backgroundImage = `url("./Card_Images/${playerCard}.png")`;
-        computerDeckUp.classList.add('noBorder')
-        playerDeckUp.classList.add('noBorder')
+        computerDeckUp.classList.add('border')
+        playerDeckUp.classList.add('border')
         round.innerHTML = `Round: ${roundNumber}`;
         if (values.indexOf(computerCard.slice(0, -1)) > values.indexOf(playerCard.slice(0, -1))) {
             computer.push(computerCard, playerCard);
@@ -113,13 +113,13 @@ function warAndCompare() {
     if (computer.length > 3 && player.length > 3) {
         computerCard = computer.splice(0, 4);
         playerCard = player.splice(0, 4);
-        // computerCardImg.src = "./Card-Images/" + computerCard + ".png";
-        // playerCardImg.src = "./Card-Images/" + playerCard + ".png";
         roundNumber++;
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
-        // computerDeckUp.innerHTML = computerCard[3];
-        // playerDeckUp.innerHTML = playerCard[3];
+        computerDeckUp.style.backgroundImage = `url("./Card_Images/${computerCard[3]}.png")`;
+        playerDeckUp.style.backgroundImage = `url("./Card_Images/${playerCard[3]}.png")`;
+        computerDeckUp.classList.add('border')
+        playerDeckUp.classList.add('border')
         round.innerHTML = `Round: ${roundNumber}`
         if (values.indexOf(computerCard[3].slice(0, -1)) > values.indexOf(playerCard[3].slice(0, -1))) {
             computer.push(computerCard, playerCard, warPlaceholder);
@@ -168,14 +168,62 @@ function restart() {
     deck = [];
     computer = [];
     player = [];
+    computerCard = [];
+    playerCard = [];
     warPlaceholder = [];
     roundNumber = 0;
     hideDrawBtn();
     hideWarBtn();
     computerDeckDown.innerHTML = 'Cards In Deck: 0';
     playerDeckDown.innerHTML = 'Cards In Deck: 0';
-    computerDeckUp.innerHTML = '';
-    playerDeckUp.innerHTML = '';
+    // Attempt 1:
+        // computerDeckUp.style.display = '.deck';
+        // playerDeckUp.style.display = '.deck';
+    // Attempt 2:
+        // computerDeckUp.style.display = 'none';
+        // playerDeckUp.style.display = 'none';
+    // Attempt 3:
+        // computerDeckUp.style.backgroundImage = 'none';
+        // playerDeckUp.style.backgroundImage = 'none';
+    // Attempt 4:
+        // computerDeckUp.style.display = '.computer-deck-up';
+        // playerDeckUp.style.display = '.player-deck-up';
+    // Attempt 5:
+        // computerDeckUp.style.background-color = 'rgb(158, 174, 180)';
+        // computerDeckUp.style.border = 'black solid 0.06em';
+        // computerDeckUp.style.border-radius = '5%';
+        // computerDeckUp.style.color = 'rgb(255, 255, 255)';
+        // computerDeckUp.style.float = 'left';
+        // computerDeckUp.style.font-size = '4.5em';
+        // computerDeckUp.style.height = '6em';
+        // computerDeckUp.style.margin = '20px';
+        // computerDeckUp.style.padding = '125px 1px';
+        // computerDeckUp.style.width = '5em';
+    // Attempt 6:
+        // computerDeckUp.style.display.background-color = 'rgb(158, 174, 180)';
+        // computerDeckUp.style.display.border = 'black solid 0.06em';
+        // computerDeckUp.style.display.border-radius = '5%';
+        // computerDeckUp.style.display.color = 'rgb(255, 255, 255)';
+        // computerDeckUp.style.display.float = 'left';
+        // computerDeckUp.style.display.font-size = '4.5em';
+        // computerDeckUp.style.display.height = '6em';
+        // computerDeckUp.style.display.margin = '20px';
+        // computerDeckUp.style.display.padding = '125px 1px';
+        // computerDeckUp.style.display.width = '5em';
+    // Attempt 7:
+        // computerDeckUp.background-color = 'rgb(158, 174, 180)';
+        // computerDeckUp.border = 'black solid 0.06em';
+        // computerDeckUp.border-radius = '5%';
+        // computerDeckUp.color = 'rgb(255, 255, 255)';
+        // computerDeckUp.float = 'left';
+        // computerDeckUp.font-size = '4.5em';
+        // computerDeckUp.height = '6em';
+        // computerDeckUp.margin = '20px';
+        // computerDeckUp.padding = '125px 1px';
+        // computerDeckUp.width = '5em';
+    // Attempt 8:
+        // computerDeckUp.style.visibility = 'hidden';
+    // Attempt 9:
     round.innerHTML = 'Round: 0';
     winner.innerHTML = 'Winner:';
 }
