@@ -69,8 +69,8 @@ function drawAndCompare() {
     if (computer.length > 0 && player.length > 0) {
         computerCard = computer.shift();
         playerCard = player.shift();
-        computerCardImg.src = "./Card-Images" + computerCard + ".jpg"
-        playerCardImg.src = "./Card-Images" + playerCard + ".jpg"
+        computerCardImg.src = "./Card-Images" + computerCard + ".png"
+        playerCardImg.src = "./Card-Images" + playerCard + ".png"
         roundNumber++;
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
@@ -115,8 +115,8 @@ function warAndCompare() {
     if (computer.length > 3 && player.length > 3) {
         computerCard = computer.splice(0, 4);
         playerCard = player.splice(0, 4);
-        computerCardImg.src = "./Card-Images" + computerCard + ".jpg"
-        playerCardImg.src = "./Card-Images" + playerCard + ".jpg"
+        computerCardImg.src = "./Card-Images" + computerCard + ".png"
+        playerCardImg.src = "./Card-Images" + playerCard + ".png"
         roundNumber++;
         computerDeckDown.innerHTML = `Cards In Deck: ${computer.length}`;
         playerDeckDown.innerHTML = `Cards In Deck: ${player.length}`;
