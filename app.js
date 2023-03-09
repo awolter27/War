@@ -1,8 +1,11 @@
+const submitBtn = document.querySelector('.submit');
 const playBtn = document.querySelector('.play');
 const restartBtn = document.querySelector('.restart');
 const drawBtn = document.querySelector('.draw');
 const warBtn = document.querySelector('.war');
 
+const textInput = document.querySelector('.text');
+const username = document.querySelector('.player')
 const computerDeckDown = document.querySelector('.computer-deck-down');
 const playerDeckDown = document.querySelector('.player-deck-down');
 const computerDeckUp = document.querySelector('.computer-deck-up');
@@ -28,10 +31,18 @@ playerDeckDown.style.backgroundImage = `url("./Card_Images/Back.png")`;
 computerDeckDown.classList.add('border');
 playerDeckDown.classList.add('border');
 
+submitBtn.addEventListener('click', submit);
 playBtn.addEventListener('click', play);
 restartBtn.addEventListener('click', restart);
 drawBtn.addEventListener('click', drawAndCompare);
 warBtn.addEventListener('click', warAndCompare);
+
+function submit() {
+    username.innerHTML = textInput.value;
+    hideTextInput();
+    hideSubmitBtn();
+    showDrawBtn();
+}
 
 function deckOfCards() {
     for (let i = 0; i < values.length; i++) {
@@ -71,7 +82,8 @@ function deal() {
 function play() {
     if (computer.length === 0 && player.length === 0) {
         deal();
-        showDrawBtn();
+        showTextInput();
+        showSubmitBtn();
     }
 }
 
@@ -96,7 +108,7 @@ function drawAndCompare() {
             player.push(playerCard, computerCard);
             computerCardsInDeck.innerHTML = `Cards In Deck: ${computer.length}`;
             playerCardsInDeck.innerHTML = `Cards In Deck: ${player.length}`;
-            winner.innerHTML = `Winner: Player won round ${roundNumber}!`;
+            winner.innerHTML = `Winner: ${username.innerHTML} won round ${roundNumber}!`;
         } else {
             warPlaceholder.push(computerCard, playerCard);
             warPlaceholder = warPlaceholder.flat();
@@ -110,7 +122,7 @@ function drawAndCompare() {
         hideWarBtn();
         computerCardsInDeck.innerHTML = `Cards In Deck: ${computer.length}`;
         playerCardsInDeck.innerHTML = `Cards In Deck: ${player.length}`;
-        winner.innerHTML = 'Winner: Player!';
+        winner.innerHTML = `Winner: ${username.innerHTML}!`;
 
     } else if (player.length === 0) {
         hideDrawBtn();
@@ -150,7 +162,7 @@ function warAndCompare() {
             showDrawBtn();
             computerCardsInDeck.innerHTML = `Cards In Deck: ${computer.length}`;
             playerCardsInDeck.innerHTML = `Cards In Deck: ${player.length}`;
-            winner.innerHTML = `Winner: Player won round ${roundNumber}!`;
+            winner.innerHTML = `Winner: ${username.innerHTML} won round ${roundNumber}!`;
         } else if (values.indexOf(computerCard[3].slice(0, -1)) === values.indexOf(playerCard[3].slice(0, -1))) {
             warPlaceholder.push(computerCard, playerCard);
             warPlaceholder = warPlaceholder.flat();
@@ -164,7 +176,7 @@ function warAndCompare() {
         hideWarBtn();
         computerCardsInDeck.innerHTML = `Cards In Deck: ${computer.length}`;
         playerCardsInDeck.innerHTML = `Cards In Deck: ${player.length}`;
-        winner.innerHTML = 'Computer has insufficient cards to go to war. Winner: Player!';
+        winner.innerHTML = `Computer has insufficient cards to go to war. Winner: ${username.innerHTML}!`;
     } else if (player.length < 4) {
         computer.push(warPlaceholder, player);
         computer = computer.flat();
@@ -172,7 +184,7 @@ function warAndCompare() {
         hideWarBtn();
         computerCardsInDeck.innerHTML = `Cards In Deck: ${computer.length}`;
         playerCardsInDeck.innerHTML = `Cards In Deck: ${player.length}`;
-        winner.innerHTML = 'Player has insufficient cards to go to war. Winner: Computer!';
+        winner.innerHTML = `${username.innerHTML} has insufficient cards to go to war. Winner: Computer!`;
     }
 }
 
@@ -186,79 +198,46 @@ function restart() {
     roundNumber = 0;
     hideDrawBtn();
     hideWarBtn();
+    textInput.value = '';
+    username.innerHTML = 'Player';
     computerCardsInDeck.innerHTML = `Cards In Deck: ${computer.length}`;
     playerCardsInDeck.innerHTML = `Cards In Deck: ${player.length}`;
-    // Attempt 1:
-        // computerDeckUp.style.display = '.deck';
-        // playerDeckUp.style.display = '.deck';
-    // Attempt 2:
-        // computerDeckUp.style.display = 'none';
-        // playerDeckUp.style.display = 'none';
-    // Attempt 3:
-        // computerDeckUp.style.backgroundImage = 'none';
-        // playerDeckUp.style.backgroundImage = 'none';
-    // Attempt 4:
-        // computerDeckUp.style.display = '.computer-deck-up';
-        // playerDeckUp.style.display = '.player-deck-up';
-    // Attempt 5:
-        // computerDeckUp.style.background-color = 'rgb(158, 174, 180)';
-        // computerDeckUp.style.border = 'black solid 0.06em';
-        // computerDeckUp.style.border-radius = '5%';
-        // computerDeckUp.style.color = 'rgb(255, 255, 255)';
-        // computerDeckUp.style.float = 'left';
-        // computerDeckUp.style.font-size = '4.5em';
-        // computerDeckUp.style.height = '6em';
-        // computerDeckUp.style.margin = '20px';
-        // computerDeckUp.style.padding = '125px 1px';
-        // computerDeckUp.style.width = '5em';
-    // Attempt 6:
-        // computerDeckUp.style.display.background-color = 'rgb(158, 174, 180)';
-        // computerDeckUp.style.display.border = 'black solid 0.06em';
-        // computerDeckUp.style.display.border-radius = '5%';
-        // computerDeckUp.style.display.color = 'rgb(255, 255, 255)';
-        // computerDeckUp.style.display.float = 'left';
-        // computerDeckUp.style.display.font-size = '4.5em';
-        // computerDeckUp.style.display.height = '6em';
-        // computerDeckUp.style.display.margin = '20px';
-        // computerDeckUp.style.display.padding = '125px 1px';
-        // computerDeckUp.style.display.width = '5em';
-    // Attempt 7:
-        // computerDeckUp.background-color = 'rgb(158, 174, 180)';
-        // computerDeckUp.border = 'black solid 0.06em';
-        // computerDeckUp.border-radius = '5%';
-        // computerDeckUp.color = 'rgb(255, 255, 255)';
-        // computerDeckUp.float = 'left';
-        // computerDeckUp.font-size = '4.5em';
-        // computerDeckUp.height = '6em';
-        // computerDeckUp.margin = '20px';
-        // computerDeckUp.padding = '125px 1px';
-        // computerDeckUp.width = '5em';
-    // Attempt 8:
-        // computerDeckUp.style.visibility = 'hidden';
-    // Attempt 9:
-        // computerDeckUp.style.backgroundImage = `url("")`;
-        // playerDeckUp.style.backgroundImage = `url("")`;
-    // Attempt 10:
-        // computerDeckUp.style.backgroundImage;
-        // playerDeckUp.style.backgroundImage;
-    // Attempt 11: 
-        //
+    computerDeckUp.style = ''; 
+    playerDeckUp.style = '';
+    computerDeckUp.classList.remove('border');
+    playerDeckUp.classList.remove('border');
     round.innerHTML = 'Round: 0';
     winner.innerHTML = 'Winner:';
 }
 
+function showTextInput() {
+    textInput.style.display = 'inline-block';
+}
+
+function hideTextInput() {
+    textInput.style.display = 'none';
+}
+
+function showSubmitBtn() {
+    submitBtn.style.display = 'inline-block';
+}
+
+function hideSubmitBtn() {
+    submitBtn.style.display = 'none';
+}
+
 function showDrawBtn() {
-    document.querySelector('.draw').style.display = 'inline-block';
+    drawBtn.style.display = 'inline-block';
 }
 
 function hideDrawBtn() {
-    document.querySelector('.draw').style.display = 'none';
+    drawBtn.style.display = 'none';
 }
 
 function showWarBtn() {
-    document.querySelector('.war').style.display = 'inline-block';
+    warBtn.style.display = 'inline-block';
 }
 
 function hideWarBtn() {
-    document.querySelector('.war').style.display = 'none';
+    warBtn.style.display = 'none';
 }
