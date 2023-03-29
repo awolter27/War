@@ -5,6 +5,7 @@ Project 1
 ## Website
 
 -  https://awolter27.github.io/War/
+- I'm planning to add in a responsive web design to optimize viewing on screens of different sizes. Unfortunately, until then you may need to zoom out with Ctrl + - to see the entire page.
 
 ## User Story
 
