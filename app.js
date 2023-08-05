@@ -5,7 +5,7 @@ const drawBtn = document.querySelector('.draw');
 const warBtn = document.querySelector('.war');
 
 const textInput = document.querySelector('.text');
-const username = document.querySelector('.player')
+const username = document.querySelector('.player');
 const computerDeckDown = document.querySelector('.computer-deck-down');
 const playerDeckDown = document.querySelector('.player-deck-down');
 const computerDeckUp = document.querySelector('.computer-deck-up');
@@ -41,6 +41,7 @@ function submit() {
     username.innerHTML = textInput.value;
     hideTextInput();
     hideSubmitBtn();
+    showDefaultUsername();
     showDrawBtn();
 }
 
@@ -82,6 +83,7 @@ function deal() {
 function play() {
     if (computer.length === 0 && player.length === 0) {
         deal();
+        hideDefaultUsername();
         showTextInput();
         showSubmitBtn();
     }
@@ -196,18 +198,29 @@ function restart() {
     playerCard = [];
     warPlaceholder = [];
     roundNumber = 0;
+    hideTextInput();
+    hideSubmitBtn();
     hideDrawBtn();
     hideWarBtn();
+    showDefaultUsername();
     textInput.value = '';
     username.innerHTML = 'Player';
     computerCardsInDeck.innerHTML = `Cards In Deck: ${computer.length}`;
     playerCardsInDeck.innerHTML = `Cards In Deck: ${player.length}`;
-    computerDeckUp.style = ''; 
+    computerDeckUp.style = '';
     playerDeckUp.style = '';
     computerDeckUp.classList.remove('border');
     playerDeckUp.classList.remove('border');
     round.innerHTML = 'Round: 0';
     winner.innerHTML = 'Winner:';
+}
+
+function showDefaultUsername() {
+    username.style.display = 'inline-block';
+}
+
+function hideDefaultUsername() {
+    username.style.display = 'none';
 }
 
 function showTextInput() {
