@@ -1,3 +1,5 @@
+/* Extra Large Monitors (>2560px) */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,16 +7,17 @@
 }
 
 body {
+    display: flex;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     min-height: 100vh;
 }
 
 .heading {
+    align-items: center;
     background-color: rgb(158, 174, 180);
-    border-bottom: black solid 0.18em;
+    border-right: black solid 0.25em;
     color: rgb(255, 255, 255);
     display: flex;
-    justify-content: center;
     padding: 20px;
 }
 
@@ -29,7 +32,7 @@ h1 {
 ul {
     display: flex;
     flex-direction: column;
-    margin: 140px 0px;
+    justify-content: center;
 }
 
 li {
