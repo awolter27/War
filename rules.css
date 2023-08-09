@@ -34,7 +34,7 @@ li {
     color: rgb(141, 166, 175);
 }
 
-/* Extra Large Monitors (>2560px) */
+/* Large Monitors (>2560px) */
 
 @media screen and (min-width: 2560px) {
     .heading {
@@ -54,7 +54,7 @@ li {
     }
 }
 
-/* Large Monitors (1600px - 2559px) */
+/* Monitors (1600px - 2559px) */
 
 @media screen and (max-width: 2559px) and (min-width: 1600px) {
     .heading {
@@ -70,6 +70,26 @@ li {
 
     li {
         font-size: 2em;
+        margin: 10px 70px 10px 100px;
+    }
+}
+
+/* Laptops */
+
+@media screen and (max-width: 1599px) and (min-width: 1200px) {
+    .heading {
+        border-right: black solid 0.23em;
+        padding: 20px;
+    }
+
+    h1 {
+        border: rgb(255, 255, 255) solid 0.09em;
+        font-size: 4em;
+        padding: 8px 18px;
+    }
+
+    li {
+        font-size: 1.5em;
         margin: 10px 70px 10px 100px;
     }
 }
