@@ -74,9 +74,29 @@ li {
     }
 }
 
-/* Laptops */
+/* Large Laptops (1200px - 1599px) */
 
 @media screen and (max-width: 1599px) and (min-width: 1200px) {
+    .heading {
+        border-right: black solid 0.23em;
+        padding: 20px;
+    }
+
+    h1 {
+        border: rgb(255, 255, 255) solid 0.09em;
+        font-size: 4em;
+        padding: 8px 18px;
+    }
+
+    li {
+        font-size: 1.5em;
+        margin: 10px 70px 10px 100px;
+    }
+}
+
+/* Laptops (769px - 1199px) */
+
+@media screen and (max-width: 1199px) and (min-width: 769px) {
     .heading {
         border-right: black solid 0.23em;
         padding: 20px;
