@@ -1,3 +1,5 @@
+/* Extra Large Monitors (>2560px) */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -73,14 +75,15 @@ h1 {
     text-align: center;
 }
 
-.computer,
+.computer {
+    color: black;
+    font-size: 4em;
+    margin-top: 30px;
+}
+
 .player {
     color: black;
     font-size: 4em;
-}
-
-.computer {
-    margin-top: 30px;
 }
 
 input {
@@ -198,3 +201,7 @@ input {
     text-align: center;
     width: 50vw;
 }
+
+/* Large Monitors (1600px - 2559px) */
+
+@media only screen and (min-width: 1600px) and (max-width: 2560px) {}
