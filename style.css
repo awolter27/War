@@ -246,20 +246,475 @@ input {
 
 /* Monitors (1600px - 2559px) */
 
-@media screen and (max-width: 2559px) and (min-width: 1600px) {}
+@media screen and (max-width: 2559px) and (min-width: 1600px) {
+
+    /* edit */
+    h1 {
+        border: rgb(255, 255, 255) solid 0.08em;
+        font-size: 10em;
+        margin: 20px;
+        padding: 10px 20px;
+    }
+
+    .left-btn {
+        border: black solid 0.09em;
+        font-size: 3em;
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .rules {
+        padding: 10px 100px;
+    }
+
+    .left-img {
+        height: auto;
+        width: 32em;
+    }
+
+    .right {
+        border-left: black solid 0.28em;
+        padding: 0 0 0 15%;
+    }
+
+    .computer {
+        font-size: 4em;
+        margin-top: 30px;
+    }
+
+    .player {
+        font-size: 4em;
+    }
+
+    input {
+        border: black solid 0.12em;
+        font-size: 1.3em;
+        margin: 20px 0 0 5px;
+        padding: 15px;
+    }
+
+    .username {
+        min-width: 15vw;
+    }
+
+    .submit {
+        min-width: 5vw;
+    }
+
+    .computer-cards-in-deck,
+    .player-cards-in-deck {
+        font-size: 3em;
+        padding: 10px;
+    }
+
+    .deck {
+        border: black solid 0.06em;
+        height: 23em;
+        margin: 20px;
+        width: 16em;
+    }
+
+    .right-btn {
+        border: black solid 0.08em;
+        font-size: 2em;
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .round {
+        border: black solid 0.08em;
+        font-size: 3em;
+        margin: 10px 20px;
+        padding: 3px 10px;
+        width: 19vw;
+    }
+
+    .winner {
+        border: black solid 0.08em;
+        font-size: 3em;
+        margin: 10px 20px;
+        margin-bottom: 40px;
+        padding: 3px 10px;
+        width: 50vw;
+    }
+}
 
 /* Large Laptops (1200px - 1599px) */
 
-@media screen and (max-width: 1599px) and (min-width: 1200px) {}
+@media screen and (max-width: 1599px) and (min-width: 1200px) {
+
+    /* edit */
+    h1 {
+        border: rgb(255, 255, 255) solid 0.08em;
+        font-size: 10em;
+        margin: 20px;
+        padding: 10px 20px;
+    }
+
+    .left-btn {
+        border: black solid 0.09em;
+        font-size: 3em;
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .rules {
+        padding: 10px 100px;
+    }
+
+    .left-img {
+        height: auto;
+        width: 32em;
+    }
+
+    .right {
+        border-left: black solid 0.28em;
+        padding: 0 0 0 15%;
+    }
+
+    .computer {
+        font-size: 4em;
+        margin-top: 30px;
+    }
+
+    .player {
+        font-size: 4em;
+    }
+
+    input {
+        border: black solid 0.12em;
+        font-size: 1.3em;
+        margin: 20px 0 0 5px;
+        padding: 15px;
+    }
+
+    .username {
+        min-width: 15vw;
+    }
+
+    .submit {
+        min-width: 5vw;
+    }
+
+    .computer-cards-in-deck,
+    .player-cards-in-deck {
+        font-size: 3em;
+        padding: 10px;
+    }
+
+    .deck {
+        border: black solid 0.06em;
+        height: 23em;
+        margin: 20px;
+        width: 16em;
+    }
+
+    .right-btn {
+        border: black solid 0.08em;
+        font-size: 2em;
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .round {
+        border: black solid 0.08em;
+        font-size: 3em;
+        margin: 10px 20px;
+        padding: 3px 10px;
+        width: 19vw;
+    }
+
+    .winner {
+        border: black solid 0.08em;
+        font-size: 3em;
+        margin: 10px 20px;
+        margin-bottom: 40px;
+        padding: 3px 10px;
+        width: 50vw;
+    }
+}
 
 /* Laptops (769px - 1199px) */
 
-@media screen and (max-width: 1199px) and (min-width: 769px) {}
+@media screen and (max-width: 1199px) and (min-width: 769px) {
+
+    /* edit */
+    h1 {
+        border: rgb(255, 255, 255) solid 0.08em;
+        font-size: 10em;
+        margin: 20px;
+        padding: 10px 20px;
+    }
+
+    .left-btn {
+        border: black solid 0.09em;
+        font-size: 3em;
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .rules {
+        padding: 10px 100px;
+    }
+
+    .left-img {
+        height: auto;
+        width: 32em;
+    }
+
+    .right {
+        border-left: black solid 0.28em;
+        padding: 0 0 0 15%;
+    }
+
+    .computer {
+        font-size: 4em;
+        margin-top: 30px;
+    }
+
+    .player {
+        font-size: 4em;
+    }
+
+    input {
+        border: black solid 0.12em;
+        font-size: 1.3em;
+        margin: 20px 0 0 5px;
+        padding: 15px;
+    }
+
+    .username {
+        min-width: 15vw;
+    }
+
+    .submit {
+        min-width: 5vw;
+    }
+
+    .computer-cards-in-deck,
+    .player-cards-in-deck {
+        font-size: 3em;
+        padding: 10px;
+    }
+
+    .deck {
+        border: black solid 0.06em;
+        height: 23em;
+        margin: 20px;
+        width: 16em;
+    }
+
+    .right-btn {
+        border: black solid 0.08em;
+        font-size: 2em;
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .round {
+        border: black solid 0.08em;
+        font-size: 3em;
+        margin: 10px 20px;
+        padding: 3px 10px;
+        width: 19vw;
+    }
+
+    .winner {
+        border: black solid 0.08em;
+        font-size: 3em;
+        margin: 10px 20px;
+        margin-bottom: 40px;
+        padding: 3px 10px;
+        width: 50vw;
+    }
+}
 
 /* Tablets (481px - 768px) */
 
-@media screen and (max-width: 768px) and (min-width: 481px) {}
+@media screen and (max-width: 768px) and (min-width: 481px) {
+
+    /* edit */
+    h1 {
+        border: rgb(255, 255, 255) solid 0.08em;
+        font-size: 10em;
+        margin: 20px;
+        padding: 10px 20px;
+    }
+
+    .left-btn {
+        border: black solid 0.09em;
+        font-size: 3em;
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .rules {
+        padding: 10px 100px;
+    }
+
+    .left-img {
+        height: auto;
+        width: 32em;
+    }
+
+    .right {
+        border-left: black solid 0.28em;
+        padding: 0 0 0 15%;
+    }
+
+    .computer {
+        font-size: 4em;
+        margin-top: 30px;
+    }
+
+    .player {
+        font-size: 4em;
+    }
+
+    input {
+        border: black solid 0.12em;
+        font-size: 1.3em;
+        margin: 20px 0 0 5px;
+        padding: 15px;
+    }
+
+    .username {
+        min-width: 15vw;
+    }
+
+    .submit {
+        min-width: 5vw;
+    }
+
+    .computer-cards-in-deck,
+    .player-cards-in-deck {
+        font-size: 3em;
+        padding: 10px;
+    }
+
+    .deck {
+        border: black solid 0.06em;
+        height: 23em;
+        margin: 20px;
+        width: 16em;
+    }
+
+    .right-btn {
+        border: black solid 0.08em;
+        font-size: 2em;
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .round {
+        border: black solid 0.08em;
+        font-size: 3em;
+        margin: 10px 20px;
+        padding: 3px 10px;
+        width: 19vw;
+    }
+
+    .winner {
+        border: black solid 0.08em;
+        font-size: 3em;
+        margin: 10px 20px;
+        margin-bottom: 40px;
+        padding: 3px 10px;
+        width: 50vw;
+    }
+}
 
 /* Phones (320px - 480px) */
 
-@media screen and (max-width: 480px) and (min-width: 320px) {}
+@media screen and (max-width: 480px) and (min-width: 320px) {
+
+    /* edit */
+    h1 {
+        border: rgb(255, 255, 255) solid 0.08em;
+        font-size: 10em;
+        margin: 20px;
+        padding: 10px 20px;
+    }
+
+    .left-btn {
+        border: black solid 0.09em;
+        font-size: 3em;
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .rules {
+        padding: 10px 100px;
+    }
+
+    .left-img {
+        height: auto;
+        width: 32em;
+    }
+
+    .right {
+        border-left: black solid 0.28em;
+        padding: 0 0 0 15%;
+    }
+
+    .computer {
+        font-size: 4em;
+        margin-top: 30px;
+    }
+
+    .player {
+        font-size: 4em;
+    }
+
+    input {
+        border: black solid 0.12em;
+        font-size: 1.3em;
+        margin: 20px 0 0 5px;
+        padding: 15px;
+    }
+
+    .username {
+        min-width: 15vw;
+    }
+
+    .submit {
+        min-width: 5vw;
+    }
+
+    .computer-cards-in-deck,
+    .player-cards-in-deck {
+        font-size: 3em;
+        padding: 10px;
+    }
+
+    .deck {
+        border: black solid 0.06em;
+        height: 23em;
+        margin: 20px;
+        width: 16em;
+    }
+
+    .right-btn {
+        border: black solid 0.08em;
+        font-size: 2em;
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .round {
+        border: black solid 0.08em;
+        font-size: 3em;
+        margin: 10px 20px;
+        padding: 3px 10px;
+        width: 19vw;
+    }
+
+    .winner {
+        border: black solid 0.08em;
+        font-size: 3em;
+        margin: 10px 20px;
+        margin-bottom: 40px;
+        padding: 3px 10px;
+        width: 50vw;
+    }
+}
