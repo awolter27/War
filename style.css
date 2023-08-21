@@ -247,43 +247,39 @@ input {
 /* Monitors (1600px - 2559px) */
 
 @media screen and (max-width: 2559px) and (min-width: 1600px) {
-
-    /* edit */
     h1 {
-        border: rgb(255, 255, 255) solid 0.08em;
-        font-size: 10em;
-        margin: 20px;
-        padding: 10px 20px;
+        border: rgb(255, 255, 255) solid 0.05em;
+        font-size: 7em;
+        padding: 5px 15px;
     }
 
     .left-btn {
-        border: black solid 0.09em;
-        font-size: 3em;
-        margin: 20px;
-        padding: 10px;
+        border: black solid 0.07em;
+        font-size: 2.3em;
+        margin: 10px 0px;
+        padding: 8px;
     }
 
     .rules {
-        padding: 10px 100px;
+        padding: 8px 100px;
     }
 
     .left-img {
         height: auto;
-        width: 32em;
+        width: 22em;
     }
 
     .right {
-        border-left: black solid 0.28em;
-        padding: 0 0 0 15%;
+        border-left: black solid 0.2em;
+        padding: 0 0 0 10%;
     }
 
     .computer {
-        font-size: 4em;
-        margin-top: 30px;
+        font-size: 2.5em;
     }
 
     .player {
-        font-size: 4em;
+        font-size: 2.5em;
     }
 
     input {
@@ -303,15 +299,15 @@ input {
 
     .computer-cards-in-deck,
     .player-cards-in-deck {
-        font-size: 3em;
-        padding: 10px;
+        font-size: 2em;
+        padding: 5px;
     }
 
     .deck {
         border: black solid 0.06em;
-        height: 23em;
-        margin: 20px;
-        width: 16em;
+        height: 18em;
+        margin: 10px;
+        width: 11em;
     }
 
     .right-btn {
@@ -323,19 +319,17 @@ input {
 
     .round {
         border: black solid 0.08em;
-        font-size: 3em;
-        margin: 10px 20px;
+        font-size: 2em;
+        margin: 10px 0px;
         padding: 3px 10px;
-        width: 19vw;
+        width: 15vw;
     }
 
     .winner {
         border: black solid 0.08em;
-        font-size: 3em;
-        margin: 10px 20px;
-        margin-bottom: 40px;
+        font-size: 2em;
         padding: 3px 10px;
-        width: 50vw;
+        width: 30vw;
     }
 }
 
